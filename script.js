@@ -1,4 +1,5 @@
 var LA_X = true;
+var Qui_li_toca = "X";
 var butoArray = ["", "", "", "", "", "", "", "", ""];
 var Algu_a_guanyat = false;
 var Punts_X = 0;
@@ -29,9 +30,22 @@ function Reiniciar() {
     var Buto_document = document.getElementById(i);
     Buto_document.textContent = "";
   }
-  LA_X = true;
+
   butoArray = ["", "", "", "", "", "", "", "", ""];
   Algu_a_guanyat = false;
+  var Qui_comencara_User = confirm("Vols que comenci la " + Qui_li_toca + " ?");
+  if (!Qui_comencara_User) {
+    if (Qui_li_toca == "X") {
+      Qui_li_toca = "O";
+    } else if (Qui_li_toca == "O") {
+      Qui_li_toca = "X";
+    }
+  }
+  if (Qui_li_toca == "X") {
+    LA_X = true;
+  } else {
+    LA_X = false;
+  }
 }
 function has_guanyat_comprovacio(valor) {
   //Horitzontal
