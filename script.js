@@ -55,15 +55,23 @@ function has_guanyat(pos01, pos02, pos03, valor) {
     setTimeout(function () {
       alert("Has Guanyat " + valor);
       Algu_a_guanyat = true;
+      if (valor == "X") {
+        Punts_X += 1;
+        Actualitzar_punts();
+      } else {
+        Punts_O += 1;
+        Actualitzar_punts();
+      }
     }, 50);
-    if (valor == "X") {
-    }
   }
 }
 
-//window.onload = function () {
-//Puntuacio_X = document.getElementById("puntuacio_x");
-//Puntuacio_X.textContent = Titul_punts + "X: " + Punts_X;
-//Puntuacio_O = document.getElementById("puntuacio_o");
-//Puntuacio_O.textContent = Titul_punts + "O: " + Punts_O;
-//};
+window.onload = function () {
+  Actualitzar_punts();
+};
+function Actualitzar_punts() {
+  Puntuacio_X = document.getElementById("puntuacio_x");
+  Puntuacio_X.textContent = Titul_punts + "X: " + Punts_X;
+  Puntuacio_O = document.getElementById("puntuacio_o");
+  Puntuacio_O.textContent = Titul_punts + "O: " + Punts_O;
+}
